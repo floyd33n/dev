@@ -1,7 +1,7 @@
 /* As elm-css doesn't have support for CSS Grid, these styles still 
    have to be written in CSS.
 */
-
+/*
 body {
     height: 100vh;
     display: grid;           
@@ -52,3 +52,4 @@ body {
             "footer      footer     footer";
     }
 }
+*/
