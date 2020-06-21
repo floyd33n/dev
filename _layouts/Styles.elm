@@ -16,6 +16,11 @@ styles =
         codeStyle =
             [ fontFamilies [ "Inconsolata", .value monospace ]
             ]
+        smartphoneScreen =
+          withMedia [ only screen [ Media.maxWidth <| Css.px 480 ] ]
+        
+        tabletScreen =
+          withMedia [ only screen [ Media.maxWidth <| Css.px 1024 ] ]
     in
     global
         [ body
