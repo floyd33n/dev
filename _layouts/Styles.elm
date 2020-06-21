@@ -16,11 +16,12 @@ styles =
         codeStyle =
             [ fontFamilies [ "Inconsolata", .value monospace ]
             ]
+
         smartphoneScreen =
-          withMedia [ only screen [ Media.maxWidth <| Css.px 480 ] ]
-        
+            withMedia [ only screen [ Media.maxWidth <| Css.px 480 ] ]
+
         tabletScreen =
-          withMedia [ only screen [ Media.maxWidth <| Css.px 1024 ] ]
+            withMedia [ only screen [ Media.maxWidth <| Css.px 1024 ] ]
     in
     global
         [ body
@@ -52,51 +53,51 @@ styles =
         , each [ h5, h6 ] [ fontSize <| Css.em 1.0, marginBottom <| rem 0.60606 ]
         , p [ margin3 auto auto (rem 1.5) ]
         , Css.Global.small [ fontSize <| pct 65 ]
-        , class "header-logo"
-            [ paddingTop <| px 6
-            , textAlign center
-            , backgroundColor <| hex "f2fae8"
-            , wideScreen [ textAlign left, borderBottom3 (px 2) solid (hex "3c8765") ]
-            ]
-        , class "navigation"
-            [ textAlign center
-            , borderBottom3 (px 2) solid (hex "3c8765")
-            , backgroundColor <| hex "f2fae8"
-            , padding <| px 10
-            , marginTop <| px -20
+
+        -- header
+        , header
+            [ Css.height <| px 100
+            , Css.width <| pct 100
+            , backgroundColor <| hex "393f4c"
+            , borderBottom3 (px 2) solid (hex "2ca9e1")
+            , displayFlex
             , descendants
-                [ ul
-                    [ margin <| px 0
-                    , padding <| px 0
-                    , wideScreen [ lineHeight <| px 100 ]
+                [ class "header-site-title"
+                    [ Css.fontSize <| px 20
+                    , Css.color <| hex "fff"
+                    , marginRight auto
+                    , descendants [ h1 [ lineHeight <| px 40 ] ]
                     ]
-                , li
-                    [ display inlineBlock
-                    , marginRight <| px 20
+                , class "header-navigation"
+                    [ textAlign center
+                    , padding <| px 10
+                    , marginTop <| px -20
+                    , descendants
+                        [ ul
+                            [ margin <| px 0
+                            , padding <| px 0
+                            , wideScreen [ lineHeight <| px 100 ]
+                            ]
+                        , li
+                            [ display inlineBlock
+                            , marginRight <| px 20
+                            ]
+                        ]
+                    , wideScreen [ marginTop <| px 0, padding <| px 0, textAlign right ]
                     ]
                 ]
-            , wideScreen [ marginTop <| px 0, padding <| px 0, textAlign right ]
             ]
         , class "content" [ Css.maxWidth <| vw 100 ]
-        , class "footer"
+        -- footer
+        , footer
             [ textAlign center
             , borderTop3 (px 2) solid (hex "2f4858")
-            , backgroundColor <| hex "348aa7"
-            , Css.color <| hex "ffffff"
+            , backgroundColor <| hex "393f4c"
+            , Css.color <| hex "fff"
             , descendants
-                [ a [ Css.color <| hex "ffffff", textDecoration none ]
-                , svg [ paddingRight <| px 5, verticalAlign baseline ]
+                [ a [ Css.color <| hex "fff", textDecoration none ]
                 ]
-            , wideScreen
-                [ lineHeight <| px 80
-                , textAlign right
-                , descendants
-                    [ class "link"
-                        [ display inlineBlock
-                        , marginRight <| px 20
-                        ]
-                    ]
-                ]
+            , marginTop auto
             ]
         , class "post-metadata"
             [ marginTop <| Css.em -0.5

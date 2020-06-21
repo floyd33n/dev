@@ -6,6 +6,7 @@ import Html.Attributes as Attr exposing (alt, attribute, class, classList, href,
 import Markdown
 import Styles
 
+
 markdown : String -> Html Never
 markdown s =
     let
@@ -19,53 +20,57 @@ markdown s =
     in
     Markdown.toHtmlWith mdOptions [ attribute "class" "markdown" ] s
 
+
 header : Html Never
 header =
-  Html.header []
-    [ div [ class "header-logo" ]
-      [ img [ alt "Author's blog", src "/img/logo.png", attribute "width" "100" ] 
-        []
-      ]
-    , div [ class "header-navigation" ]
-      [ ul []
-        [ li []
-          [ a [ href "/posts" ]
-            [ text "Posts" ]
-          ]
-        , li []
-          [ a [ href "/about" ] 
-            [ text "About" ]
-          ]
+    Html.header []
+        [ div [ class "header-site-title" ]
+            [ h1 [] [ text "floyd33n Blog" ] ]
+        , div [ class "header-navigation" ]
+            [ ul []
+                [ li []
+                    [ a [ href "/posts" ]
+                        [ text "Posts" ]
+                    ]
+                , li []
+                    [ a [ href "/about" ]
+                        [ text "About" ]
+                    ]
+                ]
+            ]
         ]
-      ]
-    ]
+
 
 mainPart : String -> List (Html Never) -> Html Never
 mainPart title contentItems =
-  let
-      isArticle = case title of
-        "All posts" ->
-          False
-        _ ->
-          True
-  in
-  div [ class "main" ]
-    [ div [] [ h1 [] [ text title ] ]
-    , div [ classList [("article-container", True), ("article-content", isArticle)]] <| contentItems
-    ]
+    let
+        isArticle =
+            case title of
+                "All posts" ->
+                    False
+
+                _ ->
+                    True
+    in
+    div [ class "main" ]
+        [ div [] [ h1 [] [ text title ] ]
+        , div [ classList [ ( "article-container", True ), ( "article-content", isArticle ) ] ] <| contentItems
+        ]
+
 
 footer : Html Never
 footer =
-  Html.footer [] [ text "©︎ 2020 floyd33n" ]
+    Html.footer [] [ text "©︎ 2020 floyd33n" ]
+
 
 layout : String -> List (Html Never) -> List (Html Never)
 layout title contentItems =
-  [ header
-  , mainPart title contentItems
-  , footer
-  , Elmstatic.stylesheet "/styles.css"
-  , Styles.styles
-  ]
+    [ header
+    , mainPart title contentItems
+    , footer
+    , Elmstatic.stylesheet "/styles.css"
+    , Styles.styles
+    ]
 
 
 main : Elmstatic.Layout
@@ -73,6 +78,7 @@ main =
     Elmstatic.layout Elmstatic.decodePage <|
         \content ->
             Ok <| layout content.title [ markdown content.content ]
+
 
 githubIcon : Html Never
 githubIcon =
@@ -87,6 +93,7 @@ M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.3
                 []
     in
     Html.node "svg" [ attribute "width" "16", attribute "height" "16", attribute "viewBox" "0 0 16 16" ] [ pathNode ]
+
 
 twitterIcon : Html Never
 twitterIcon =
