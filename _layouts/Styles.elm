@@ -85,6 +85,7 @@ styles =
                         , li
                             [ display inlineBlock
                             , marginRight <| px 20
+                            , descendants [ a [ Css.color <| hex "fff" ] ]
                             ]
                         ]
                     , wideScreen [ marginTop <| px 0, padding <| px 0, textAlign right ]
@@ -149,7 +150,7 @@ styles =
                 , a
                     [ border3 (px 1) solid (hex "e0e0e0")
                     , borderRadius <| px 3
-                    , backgroundColor <| hex "f2fae8"
+                    , backgroundColor <| hex "ecf7ff"
                     , paddingLeft <| px 5
                     , paddingRight <| px 5
                     ]
