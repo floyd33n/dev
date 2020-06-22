@@ -25,7 +25,7 @@ header : Html Never
 header =
     Html.header []
         [ div [ class "header-site-title" ]
-            [ h1 [] [ text "floyd33n Blog" ] ]
+            [ a [ href "/" ] [ text "floyd33n's Blog" ] ]
         , div [ class "header-navigation" ]
             [ ul []
                 [ li []
