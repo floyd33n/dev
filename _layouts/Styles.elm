@@ -65,12 +65,16 @@ styles =
             , backgroundColor <| hex "393f4c"
             , borderBottom3 (px 2) solid (hex "2ca9e1")
             , displayFlex
+            , Css.color <| hex "fff"
             , descendants
                 [ class "header-site-title"
                     [ Css.fontSize <| px 20
-                    , Css.color <| hex "fff"
                     , marginRight auto
-                    , descendants [ h1 [ lineHeight <| px 40 ] ]
+                    , descendants [ a [ Css.color <| hex "fff"
+                                      , fontSize <| px 40
+                                      , lineHeight <| px 100
+                                      ]
+                                  ]
                     ]
                 , class "header-navigation"
                     [ textAlign center
