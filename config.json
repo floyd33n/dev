@@ -19,5 +19,5 @@
           "link": "https://example.com/about"
         }
     },
-    "tags": ["other", "software"]
+    "tags": ["other", "software", "elm"]
 }
