@@ -14,8 +14,12 @@ main =
           article [ class "article-card" ]
             [ div [ class "card-header" ]
               [ figure [ class "card-thumbnail" ]
-                [ img [ Attr.src ("/img/thumbnails/" ++ (String.dropLeft 6 post.link) ++ "_thumbnail.png") ] [] ]
-              , a [ href ("/" ++ post.link)  ] [ h3 [] [ text post.title ] ]
+                [ img [ Attr.src ("/img/thumbnails/" ++ (String.dropLeft 6 post.link) ++ "_thumbnail.png")
+                      , Attr.alt ""
+                      ] 
+                      []
+                ]
+              , a [ href ("/" ++ post.link)  ] [ h1 [] [ text post.title ] ]
               ]
             , div [ class "card-body" ] []
             , div [ class "card-footer" ]

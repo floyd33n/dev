@@ -131,6 +131,8 @@ styles =
           , Css.padding <| px 10
           , margin2 (px 30) (px 20)
           ]
+        , class "card-header"
+          [ descendants [ typeSelector "h1" [ fontSize <| Css.em 1.3 ] ] ]
         , class "card-thumbnail"
           [ margin (px 0)
           , descendants [ typeSelector "img" [ Css.width <| pct 100 ] ]

@@ -143,6 +143,8 @@ htmlTemplate title contentNodes =
                 [ attribute "charset" "utf-8"
                 , attribute "name" "viewport"
                 , attribute "content" "width=device-width,initial-scale=1"
+                , attribute "name" "description"
+                , attribute "content" "floyd33n's Blog"
                 ]
                 []
             , script "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.1/highlight.min.js"
