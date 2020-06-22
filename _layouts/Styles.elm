@@ -32,6 +32,10 @@ styles =
             , fontFamilies [ "Open Sans", "Arial", .value sansSerif ]
             , fontSize <| px 18
             , lineHeight <| Css.em 1.4
+            , displayFlex
+            , flexFlow1 column
+            , Css.minHeight <| vh 100
+            , Css.width <| pct 100
             ]
         , a
             [ Css.color <| hex "348aa7"
