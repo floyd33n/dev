@@ -110,6 +110,7 @@ styles =
           , Css.maxWidth <| px 1200
           , displayFlex
           , flexFlow1 column
+          , alignItems center
           ]
         -- article
         , class "article-container"
