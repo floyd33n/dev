@@ -139,10 +139,12 @@ htmlTemplate title contentNodes =
         [ node "head"
             []
             [ node "title" [] [ text title ]
-            , node "meta" [ attribute "charset" "utf-8" 
-            , attribute "name" "viewport"
-            , attribute "content" "width=device-width,initial-scale=1"
-            ] []
+            , node "meta"
+                [ attribute "charset" "utf-8"
+                , attribute "name" "viewport"
+                , attribute "content" "width=device-width,initial-scale=1"
+                ]
+                []
             , script "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.1/highlight.min.js"
             , script "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.1/languages/elm.min.js"
             , inlineScript "hljs.initHighlightingOnLoad();"
