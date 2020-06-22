@@ -27,7 +27,7 @@ styles =
         [ body
             [ padding <| px 0
             , margin <| px 0
-            , backgroundColor <| hex "ffffff"
+            , backgroundColor <| hex "eaf4fc"
             , Css.color <| hex "363636"
             , fontFamilies [ "Open Sans", "Arial", .value sansSerif ]
             , fontSize <| px 18
@@ -99,6 +99,38 @@ styles =
                 ]
             , marginTop auto
             ]
+        -- main
+        , class "main" 
+          [ flexGrow (num 1)
+          , margin2 (px 0) auto
+          , Css.maxWidth <| px 1200
+          , displayFlex
+          , flexFlow1 column
+          ]
+        -- article
+        , class "article-container"
+          [ displayFlex
+          , Css.height <| pct 100
+          , Css.width <| pct 100
+          , flexWrap wrap
+          , justifyContent spaceBetween
+          ]
+        -- article-card
+        , class "article-card"
+          [ Css.width <| pct 25
+          , Css.backgroundColor <| hex "f7fcfe"
+          , borderRadius <| px 5
+          , Css.boxShadow4 (px 0) (px 2) (px 5) (hex "ccc")
+          , marginBottom (px 30)
+          , Css.minWidth <| px 280
+          , Css.padding <| px 10
+          , margin2 (px 30) (px 20)
+          ]
+        , class "card-thumbnail"
+          [ margin (px 0)
+          , descendants [ typeSelector "img" [ Css.width <| pct 100 ] ]
+          ]
+        , class "article-container.article-content" [ flexFlow1 column ]
         , class "post-metadata"
             [ marginTop <| Css.em -0.5
             , marginBottom <| Css.em 2.0
