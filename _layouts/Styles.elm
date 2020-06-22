@@ -150,9 +150,10 @@ styles =
                 , a
                     [ border3 (px 1) solid (hex "e0e0e0")
                     , borderRadius <| px 3
-                    , backgroundColor <| hex "ecf7ff"
+                    , backgroundColor <| hex "effffc"
                     , paddingLeft <| px 5
                     , paddingRight <| px 5
+                    , Css.color <| hex "2a4073"
                     ]
                 ]
             ]
