@@ -38,7 +38,7 @@ styles =
             , Css.width <| pct 100
             ]
         , a
-            [ Css.color <| hex "348aa7"
+            [ Css.color <| hex "2a83a2"
             , textDecoration none
             ]
         , code codeStyle
